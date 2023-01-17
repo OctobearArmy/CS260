@@ -10,10 +10,33 @@
               remove marble
               is empty
               is full
-              
-      
+-Tests I could do would be trying to add more marbles than the bags limit, try to remove from an empty bag, test wether the marbles pulled out are the right color.
+ 1.representing marbles: (lines 7-15)
+           class Marble { 
+           private:
+               const char *color_; //aspect
 
-
+           public:
+               Marble()                { } //default constructor needed for bag creation
+               Marble(const char *color)    { color_ = color; }
+               const char *getColor() const { return color_; } //technically method
+          };
+2. add marbles to bag(lines 28-35)
+          bool add_marble(Marble marble) {
+             if (!is_full()) {
+                 bag_[cnt_] = marble;
+                 cnt_++;
+                 return true;
+             }
+             return false;
+         }
+3. remove marbles from bag(lines 64-67)
+         while (bag.not_empty()) { 
+             Marble marble = bag.get_marble();
+             printf("Removing '%s' marbled from bag.\n", marble.getColor());
+         }
+4. tests 
+     I have solutions to combat all of the problems I thought up by making my tests
 
 
 ALTERNITAVELY
