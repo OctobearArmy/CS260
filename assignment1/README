@@ -36,8 +36,9 @@
              printf("Removing '%s' marbled from bag.\n", marble.getColor());
          }
 4. tests 
-     I have solutions to combat all of the problems I thought up by making my tests
-
+     I have solutions to combat all of the problems I thought up by making my tests and as for the testing color thing I have a screenshot for that should be in this folder
+     
+5 and 6. As for implementation I uploaded an image  that shows it working on my computer
 
 ALTERNITAVELY
 -I could represent the marbles with a struct (same attributes as in the first) 
