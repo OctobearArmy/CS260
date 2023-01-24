@@ -1,0 +1,52 @@
+Based on what we know about linked lists, stacks, and queues, design a queue data structure:
+-I would like to design a hold line like the ones they have for the doctors or dentists office when you call them
+(of course it isn't a perfect simulation because in real life people can choose to hang up at any point in the line)
+  -CLASSES:
+  1. Node class(could also be a struct)
+    - variable (phone number string (or i guess *list of ch))
+    - pointer to next node (=NULL) 
+    -default consructor
+    -functions
+      1.getNum- gets phone number information
+  2. Queue class
+    - default front and back
+    - intager variable to represent # of elements currently in queue
+    - head(node that is first in the queue)
+    - last
+    - functions
+      1.back-	Returns a reference to the last and most recently added element at the back of the queue.
+      2.front-	Returns a reference to the first element at the front of the queue.(can combine with remove)
+      3.empty-	Tests if the queue is empty.
+      4.remove-	Removes an element from the front of the queue.
+      5.add-	Adds an element to the back of the queue.
+      6.size-	Returns the number of elements in the queue.
+      7.newCaller- creates a new node with new data to get readt to push it to the front
+    
+
+What functions are we likely to need for a queue to function like the one discussed in class?
+see functions in above design
+
+What values will we need to know about the structure for our queue to function properly?
+-what the head of the list is as well as what the last is
+-When you're placed on hold, every so often the automated voice thing tells you where you are in the line.
+
+Based on what we know about linked lists, design a list data structure that allows us to add (insert) or remove (delete) values at a given location in the list (instead of the top of a stack or the front or back of a queue):
+NODE CLASS/STRUCT
+data
+pointer to next
+pointer to previous
+default constructor
+-functions
+  -show- whatever identifying information you give the node that you wanna use
+
+LIST
+below functions
+
+What functions are we likely to need for a list to function like this?
+1.findElement- makes sure the node you wanna do stuff to exists
+2.removeElement- removes node from list and points previous to the next node 
+3.showAll- shows all of the nodes in order so you can decide where you wanna add or remove
+4.addElement- creates and inserts element to specified position
+What values will we need to know about the structure for our list to function properly?
+the head
+the last

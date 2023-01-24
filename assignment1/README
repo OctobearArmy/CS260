@@ -11,6 +11,7 @@
               is empty
               is full
 -Tests I could do would be trying to add more marbles than the bags limit, try to remove from an empty bag, test wether the marbles pulled out are the right color.
+ NOTE: This code was NOT simple. I missunderstood the assignment. This actually took me forever.
  1.representing marbles: (lines 7-15)
            class Marble { 
            private:
