@@ -36,6 +36,8 @@ data
 pointer to next
 pointer to previous
 default constructor
+-functions
+  -show- whatever identifying information you give the node that you wanna use
 
 LIST
 below functions
@@ -43,6 +45,8 @@ below functions
 What functions are we likely to need for a list to function like this?
 1.findElement- makes sure the node you wanna do stuff to exists
 2.removeElement- removes node from list and points previous to the next node 
+3.showAll- shows all of the nodes in order so you can decide where you wanna add or remove
+4.addElement- creates and inserts element to specified position
 What values will we need to know about the structure for our list to function properly?
 the head
 the last
