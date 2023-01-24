@@ -4,6 +4,7 @@
 #include <string>
 
 using std:: cout;
+using std:: endl;
 
 #define BAG_SIZE 20
 #define GET_SIZE  5
@@ -117,22 +118,22 @@ int main(){
                     break;
                 }
                 else{
-                    cout <<"Bag is full.\n";
+                    cout <<"Bag is full."<< endl;
                     break;};
                             
             case(SELECT):
                 if(!bag.is_empty()){
                 Marble marble = bag.get_marble();
                 printf("Removing '%s' marble from bag.\n", marble.getColor());}
-                else{cout<<"Bag is empty.\n";}
+                else{cout<<"Bag is empty."<< endl;}
                 break;
                 
                 case(VIEW):
-                    cout <<"You have "<< bag.count() <<" marbles in the bag\n";
+                    cout <<"You have "<< bag.count() <<" marbles in the bag"<< endl;
                     break; //Yay I fixed the c++ library problem!
                     
                 case(EXIT): return 0;
-                default: cout << "Improper input.";
+                default: cout << "Improper input."<< endl;
             }
     }while (option != 4);
 }
