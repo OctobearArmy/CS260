@@ -41,7 +41,4 @@
      
 5 and 6. As for implementation I uploaded an image  that shows it working on my computer
 
-ALTERNITAVELY
--I could represent the marbles with a struct (same attributes as in the first) 
-    I would have to make a
--marble bag would be an arrray that would get added to using a function. I could use a function to keep track of how many marbles have been added/removed to make sure it isn't over capacity
+
