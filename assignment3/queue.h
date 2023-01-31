@@ -4,7 +4,7 @@
 #include <exception>
 
 //============================================================================//
-template <typename T> 
+template <typename T> //O(1)
 class Node {
     public:
         T value;
@@ -20,7 +20,7 @@ class Node {
 
 //============================================================================//
 template <typename T>
-class Queue {
+class Queue {   //O(1)
     typedef Node<T> _N;
     
     private:
@@ -36,26 +36,26 @@ class Queue {
 
         bool isEmpty() const { return _head ==_tail; }
 
-        void enqueue(T value) {
+        void enqueue(T value) { // O(1)
             _tail->next = new _N(value);
             _tail       = _tail->next;
         }
 
-        T peek() {      // Return first element data in queue (throws logic error exception if queue is empty).
+        T peek() {      // (O(1))Return first element data in queue (throws logic error exception if queue is empty).
             if (isEmpty()) {
                 throw std::logic_error("Empty queue.");  // https://cplusplus.com/reference/stdexcept/logic_error/
             }
             return _first()->value;
         }
 
-        T dequeue() {      // Removes first element from queue and returns its data (throws logic error exception if queue is empty).
+        T dequeue() {      // ( O(1)) Removes first element from queue and returns its data (throws logic error exception if queue is empty).
             if (isEmpty()) {
                 throw std::logic_error("Empty queue.");  // https://cplusplus.com/reference/stdexcept/logic_error/
             }
 
-           _N node =_first();     // Pointer to node at the front of the queue.
-           _N next = node->next;  // Copy of pointer to next node.
-            T copy = node->value; // Copy of data in node.
+           _N *node =_first();     // Pointer to node at the front of the queue.
+           _N *next = node->next;  // Copy of pointer to next node.
+            T  copy = node->value; // Copy of data in node.
 
             delete node;
             _first(next);  // Update first valid node.
@@ -71,7 +71,7 @@ class Queue {
 #define MAX_SIZE 64
 
 //============================================================================//
-template <typename T>
+template <typename T> //Helpful site https://www.codesdope.com/course/data-structures-queue/
 class QueueArr {
     private:
         T   arr[MAX_SIZE];  //pointer to first element
@@ -86,7 +86,7 @@ class QueueArr {
         int  _incr(int idx) { return (++idx % max); }  // Compute next index by incrementing array index and wrapping around to 0 if necessary.
         
     public:
-        QueueArr() {
+        QueueArr() { // O(1)
              beg = end = 0;
              size = 0;
              max = MAX_SIZE;
@@ -97,7 +97,7 @@ class QueueArr {
 
         bool isFull() { return _full(); }
 
-        void enqueque(T value) {
+        void enqueque(T value) {    // O(1)
             if(_full()) {
                 throw std::logic_error("Full queue.");  // https://cplusplus.com/reference/stdexcept/logic_error/
             }
@@ -106,14 +106,14 @@ class QueueArr {
             size++;
         }
 
-        T peek() {
+        T peek() {  // O(1)
             if (isEmpty()) {
                 throw std::logic_error("Empty queue.");  // https://cplusplus.com/reference/stdexcept/logic_error/
             }            
             return arr[beg];
         }
 
-        T dequeue() {
+        T dequeue() {   // O(1)
             T value = peek();
 
             beg =_incr(beg);
