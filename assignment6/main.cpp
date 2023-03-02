@@ -2,9 +2,7 @@
 #include <string>
 
 #include "node.h"
-#include "binaryTree.h"
-
-
+#include "binaryTree.hpp"
 
 using std::cin;
 using std::cout;
