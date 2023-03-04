@@ -1,0 +1,21 @@
+Create a design before you begin to code that describes or shows how we can store data in a hash table and what kind of problem we could solve with a hash table.
+  A hash table is essentially aa array key value pairs. I'm not sure how in depth you want this design to go without me literally just making a hashtable. Each spot in the array holds a key to a value. The good thing about hash tables is that they have a constant speed of access thanks to the array and being able to index into it. Because of this hash tables can be used for many things. Anything you want to be able to organize and access the information quickly for would be able to make use of a hash table. Just like the example with letters we used in class!
+
+Create some tests (at least one per piece of functionality) before you begin coding that you want your hashtable to pass before you start coding.
+
+Create a hashtable that resolves collisions by simply overwriting the old value with the new value, including at least:
+
+Describe the way that you decide on hashing a value
+(this can be simple or complex based on how interesting you find the topic)
+
+An insert function that places the value at the appropriate location based on its hash value
+
+A contains function that returns whether the value is already in the hashtable
+
+(optional) A delete function that removes a value based on its hash and then returns that value…
+
+Then create a smarter hashtable (double hashing or chaining) including at least the same functions as the simple hashtable
+
+Compare some information relating to collisions (frequency) and their effect on complexity (of insert and contains methods)
+
+Once you have implemented and tested your code, add to the README file what line(s) of code or inputs and outputs show your work meeting each of the above requirements (or better, include a small screen snip of where it meets the requirement!).
