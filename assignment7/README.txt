@@ -9,30 +9,19 @@ Describe the way that you decide on hashing a value
 (this can be simple or complex based on how interesting you find the topic)
 to make the indicies as unique as possible I took the value of the characters and multipleid it by the index +1.
 An insert function that places the value at the appropriate location based on its hash value
- void insert(Student *student)
+  void insert(Student *student)
   {
-    int index = hash(student);
-    while (data[index] != nullptr && data[index]->id != student->id)
-    {
-      index = (index + 1) % MAX_SIZE;
-    }
-    data[index] = student;
+    data[hash(student)] = student;
   }
 A contains function that returns whether the value is already in the hashtable
- Student *find(const string &id)
+  Student *find(const string &id)
   {
-    int index = ::hash(id);
-    while (data[index] != nullptr && data[index]->id != id)
-    {
-      index = (index + 1) % MAX_SIZE;
-    }
-    return data[index];
+    return data[::hash(id)];
   }
-};
 (optional) A delete function that removes a value based on its hash and then returns that value…
 
 Then create a smarter hashtable (double hashing or chaining) including at least the same functions as the simple hashtable
 
 Compare some information relating to collisions (frequency) and their effect on complexity (of insert and contains methods)
-
+collisions with the simple are obviously wy more prevelent especially as you start to fill the table more and more. The insert function with chaining complexity of the insert function changes to O(1) in both the average and worst-case scenarios.
 Once you have implemented and tested your code, add to the README file what line(s) of code or inputs and outputs show your work meeting each of the above requirements (or better, include a small screen snip of where it meets the requirement!).
