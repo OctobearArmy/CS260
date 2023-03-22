@@ -18,7 +18,7 @@ I plan to make a connect 4 like game that creates the board by adding vertexes a
                  \   |  /
 I want the nodes to be able to keep track of 8 neigbors (unless they represent the corners/edges of the board)
 I want it to work like a regular connect 4  game with X, O symbols representing different players
-Unlike regular connect 4, when the user picks a top node (representing the top of the board where you drop in your little discs) I will make a spanning tree algorithm function that looks for the 'shortest path' (I hope combining the two is ok!). since I will be giving different costs to each edge it should shake things up! 
+Unlike regular connect 4, when the user picks a top node (representing the top of the board where you drop in your little discs) I will make a spanning tree algorithm function that looks for the 'shortest path' (I hope combining the two is ok!) from that top node to all other nodes in the graph. The player piece/symbol will be placed at the end of the shortest path. Every time someone puts a piece in, the edges along the minimum path will increase in cost. Since I will be giving different costs to each edge it should shake things up! 
 
 
 For this program I will create a 
@@ -28,9 +28,9 @@ For this program I will create a
      -symbol
      
 FUNCTIONS: computing distance from one node to another
-           reterning neighbor
-           returning the identifier
-           returning position
+           return neighbor (for a given direction)
+           return the identifier
+           return position
  
  - a graph class to keep track of the positions of the nodes
  FUNCTIONS: add nodes
@@ -40,7 +40,7 @@ FUNCTIONS: computing distance from one node to another
   
   
   
-IMPORTANT NOTE!!!: As I was coding I changed several things so this design is more of a rough draft really. It functions the same as I wanted it too but I added some things.
+IMPORTANT NOTE!!!: As I was coding I changed several things so this design is more of a rough draft really. It functions the same as I wanted it too but I added some things. For example, I added an edge class to keep track of the edge costs between nodes, which allowed me to dynically update the edge costs. I also added a path element class to use in conjuction with a std::priority_queue during the minimum path spanning tree computation.
 
 (20%) Create some tests (at least two for each piece of functionality) before you start coding...
 ADD NEW VERTEX 
@@ -70,7 +70,7 @@ SPANNING TREE
    Test to ensure that it gives the expexted output from multiple posistions (nodes) to make sure it is spanning to the expected nodes
     
 
-(40%) Implement a graph class with at least (this category effectively combines implementation and specification, partly to emphasize getting the algorithms working!):
+(40%) Implement a graph class with at least the following below (this category effectively combines implementation and specification, partly to emphasize getting the algorithms working!):
 
 (5%) a function to add a new vertex to the graph (perhaps add_vertex(vertex_name)),
           GraphNode *Graph::_addNode() {//O(1)
@@ -152,7 +152,7 @@ SPANNING TREE
           return minNode;
         }
 (15%) a function for a minimum spanning tree algorithm (example min_span_tree()).
-  same as above it combines the two functionalitues to look for the shortest path from the chosen top node to either an available bottom node or a node where the node to the downward direction of it already has a symbol.
+  Same as above it combines the two functionalitues to look for the shortest path from the chosen top node to either an available bottom node or a node where the node in the downward direction of it already has a symbol.
   
 (10%) Analyze the complexity of all of your graph behaviors (effectively a part of our documentation for grading purposes),
     I have added a comment with complexity next to each function in the code
